@@ -45,4 +45,10 @@ class Translator
       @dictionary[char]
     end.join
   end
+
+  def from_file(file)
+    open_file = File.open(file)
+    plaintext = File.read(open_file)
+    eng_to_morse(plaintext)
+  end
 end
