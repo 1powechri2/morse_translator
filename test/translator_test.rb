@@ -14,4 +14,16 @@ class TranslatorTest < Minitest::Test
     expected   = "......-...-..--- .-----.-..-..-.."
     assert_equal expected, actual
   end
+
+  def test_case_sensitive_with_numbers
+    translator = Translator.new
+
+    actual     = translator.eng_to_morse("Hello World")
+    expected   = "......-...-..--- .-----.-..-..-.."
+    assert_equal expected, actual
+
+    actual     = translator.eng_to_morse("There are 3 ships")
+    expected   = "-......-.. .-.-.. ...-- ..........--...."
+    assert_equal expected, actual
+  end
 end
