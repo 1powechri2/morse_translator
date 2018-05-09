@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/translator'
+require 'pry'
 
 class TranslatorTest < Minitest::Test
   def test_translator_exists
@@ -34,6 +35,14 @@ class TranslatorTest < Minitest::Test
 
     actual     = translator.from_file("input.txt")
     expected   = ".. .-..---...-. .--.---.-.-.-.--"
+    assert_equal expected, actual
+  end
+
+  def test_morse_to_eng
+    translator = Translator.new
+
+    actual     = translator.morse_to_eng(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")
+    expected   = "hello world"
     assert_equal expected, actual
   end
 end

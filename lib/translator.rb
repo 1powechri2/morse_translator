@@ -51,4 +51,15 @@ class Translator
     plaintext = File.read(open_file)
     eng_to_morse(plaintext)
   end
+
+  def morse_to_eng(morse)
+    morse.split(/ /).map do |letter|
+      if letter == ""
+        letter = " "
+      else
+        letter
+      @dictionary.invert[letter]
+      end
+    end.join
+  end
 end
