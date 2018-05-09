@@ -58,8 +58,8 @@ class Translator
         letter = " "
       else
         letter
-      @dictionary.invert[letter]
       end
+      @dictionary.invert[letter]
     end.join
   end
 end
